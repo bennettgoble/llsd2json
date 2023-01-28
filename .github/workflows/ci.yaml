@@ -42,7 +42,7 @@ jobs:
 
       - name: Test Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
-        if: github.event_name != 'pull_request'
+        if: startsWith(github.event.ref, 'refs/tags/v')
         with:
           password: ${{ secrets.PYPI_TEST_TOKEN }}
           repository_url: https://test.pypi.org/legacy/

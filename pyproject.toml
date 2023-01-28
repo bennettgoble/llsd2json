@@ -29,7 +29,6 @@ llsd2json = "llsd2json.cli:llsd2json"
 json2llsd = "llsd2json.cli:json2llsd"
 
 [tool.setuptools_scm]
-local_scheme = "no-local-version"
 
 [build-system]
 requires = ["setuptools", "setuptools_scm[toml]>=6.2"]
