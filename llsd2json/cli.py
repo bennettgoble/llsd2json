@@ -57,7 +57,7 @@ def llsd2json(argv: Iterable[str] = None):
     parser = llsd.parse if args.format == "auto" else getattr(llsd, f"parse_{args.format}")
 
     try:
-        print(json.dumps(llsd.parse(input), cls=JSONEncoder))
+        print(json.dumps(parser(input), cls=JSONEncoder))
     except llsd.LLSDParseError as e:
         sys.exit(f"LLSD decode error: {e}")
 
